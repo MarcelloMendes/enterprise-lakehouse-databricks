@@ -118,3 +118,123 @@ display(
 
 # COMMAND ----------
 
+sales_fact.printSchema()
+
+# COMMAND ----------
+
+display(sales_fact)
+
+# COMMAND ----------
+
+sales_summary = (
+    sales_fact
+        .groupBy("category")
+        .agg(
+            sum("total_amount").alias("revenue"),
+            sum("quantity").alias("units_sold"),
+            countDistinct("customer_id").alias("customers")
+        )
+        .orderBy(desc("revenue"))
+)
+
+# COMMAND ----------
+
+display(sales_summary)
+
+# COMMAND ----------
+
+spark.sql("""
+DROP TABLE IF EXISTS gizmobox.gold.sales_summary
+""")
+
+# COMMAND ----------
+
+sales_summary.write \
+    .format("delta") \
+    .mode("overwrite") \
+    .saveAsTable("gizmobox.gold.sales_summary")
+
+# COMMAND ----------
+
+display(
+    spark.table("gizmobox.gold.sales_summary")
+)
+
+# COMMAND ----------
+
+sales_fact = sales_fact.withColumn(
+    "total_amount",
+    col("price") * col("quantity")
+)
+
+# COMMAND ----------
+
+sales_fact = sales_fact.select(
+    "order_id",
+    "order_date",
+    "customer_id",
+    "first_name",
+    "last_name",
+    "city",
+    "state",
+    "product_id",
+    "product_name",
+    "category",
+    "quantity",
+    "price",
+    "total_amount",
+    "status"
+)
+
+# COMMAND ----------
+
+display(sales_fact)
+
+# COMMAND ----------
+
+spark.sql("""
+DROP TABLE IF EXISTS gizmobox.gold.sales_fact
+""")
+
+# COMMAND ----------
+
+sales_fact.write \
+    .format("delta") \
+    .mode("overwrite") \
+    .saveAsTable("gizmobox.gold.sales_fact")
+
+# COMMAND ----------
+
+display(
+    spark.table("gizmobox.gold.sales_fact")
+)
+
+# COMMAND ----------
+
+sales_summary = (
+    sales_fact
+        .groupBy("category")
+        .agg(
+            sum("total_amount").alias("revenue"),
+            sum("quantity").alias("units_sold"),
+            countDistinct("customer_id").alias("customers")
+        )
+        .orderBy(desc("revenue"))
+)
+
+# COMMAND ----------
+
+display(sales_summary)
+
+# COMMAND ----------
+
+spark.sql("""
+DROP TABLE IF EXISTS gizmobox.gold.sales_summary
+""")
+
+# COMMAND ----------
+
+sales_summary.write \
+    .format("delta") \
+    .mode("overwrite") \
+    .saveAsTable("gizmobox.gold.sales_summary")
