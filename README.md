@@ -1,5 +1,7 @@
 # Enterprise Lakehouse with Databricks
 
+## Architecture
+![Architecture](images/architecture.png)
 ![Databricks](https://img.shields.io/badge/Databricks-EF3E42?style=for-the-badge&logo=databricks&logoColor=white)
 ![Apache Spark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
 ![Delta Lake](https://img.shields.io/badge/Delta_Lake-0A84FF?style=for-the-badge)
@@ -8,6 +10,14 @@
 ![Unity Catalog](https://img.shields.io/badge/Unity_Catalog-FF3621?style=for-the-badge)
 
 ---
+
+# Project Pipeline
+
+The following diagram illustrates the complete end-to-end data flow implemented in this project.
+
+<p align="center">
+  <img src="images/pipeline.png" width="100%">
+</p>
 
 ## Project Overview
 
