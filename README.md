@@ -202,6 +202,27 @@ enterprise-lakehouse-databricks
 
 ---
 
+# Databricks Workspace
+
+The following screenshot shows the project implemented and executed inside the Databricks workspace.
+
+<p align="center">
+    <img src="images/screenshots/workspace.png" width="95%">
+</p>
+
+# Business Dashboard
+
+The Gold layer was used to build interactive analytical dashboards in Databricks SQL, providing business insights through KPIs and visualizations.
+
+<p align="center">
+    <img src="images/screenshots/dashboard.png" width="95%">
+</p>
+
+**Dashboard Highlights**
+- Orders by State
+- Orders by Status
+- Total Orders KPI
+
 # Author
 
 **Marcelo Mendes**
