@@ -23,6 +23,29 @@ The following diagram illustrates the complete end-to-end data flow implemented 
   <img src="images/pipeline.png" width="100%">
 </p>
 
+# Medallion Architecture
+
+The Medallion Architecture organizes data into three logical layers that progressively improve data quality and business value.
+
+<p align="center">
+  <img src="images/medallion.png" width="95%">
+</p>
+
+### Bronze Layer
+- Raw data ingestion
+- Immutable source data
+- Audit and replay support
+
+### Silver Layer
+- Cleansed and validated datasets
+- Standardization and enrichment
+- Business rules applied
+
+### Gold Layer
+- Curated analytical datasets
+- Star schema modeling
+- Business-ready tables for BI and dashboards
+
 ## Project Overview
 
 This project demonstrates the implementation of a complete **Enterprise Lakehouse** using **Databricks**, **Apache Spark**, and **Delta Lake**.
