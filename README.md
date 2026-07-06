@@ -223,6 +223,22 @@ The Gold layer was used to build interactive analytical dashboards in Databricks
 - Orders by Status
 - Total Orders KPI
 
+# Skills Demonstrated
+
+- Databricks Free Edition
+- Unity Catalog
+- Delta Lake
+- Apache Spark
+- PySpark
+- SQL
+- Structured Streaming
+- Change Data Feed (CDF)
+- Slowly Changing Dimensions (Type 1 & Type 2)
+- Data Quality
+- Medallion Architecture
+- Performance Optimization
+- Git & GitHub
+
 # Author
 
 **Marcelo Mendes**
